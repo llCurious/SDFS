@@ -1,16 +1,12 @@
-package sdfs;
+package main.sdfs;
 
-import sdfs.datanode.DataNode;
-import sdfs.namenode.DirNode;
-import sdfs.namenode.FileNode;
-import sdfs.namenode.Master;
+import main.sdfs.namenode.FileNode;
+import main.sdfs.namenode.Master;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.FileAlreadyExistsException;
-import java.util.List;
 
 /**
  * Created by HaoqiWu on 10/13/17.

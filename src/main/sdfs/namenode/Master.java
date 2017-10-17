@@ -1,6 +1,6 @@
-package sdfs.namenode;
+package main.sdfs.namenode;
 
-import sdfs.LocatedBlock;
+import main.sdfs.LocatedBlock;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

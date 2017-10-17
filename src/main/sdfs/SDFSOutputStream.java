@@ -2,10 +2,10 @@
  * Copyright (c) Jipzingking 2016.
  */
 
-package sdfs;
+package main.sdfs;
 
-import sdfs.datanode.DataNode;
-import sdfs.namenode.FileNode;
+import main.sdfs.datanode.DataNode;
+import main.sdfs.namenode.FileNode;
 
 import java.io.Closeable;
 import java.io.Flushable;

@@ -1,4 +1,4 @@
-package sdfs.namenode;
+package main.sdfs.namenode;
 
 public class Entity {
     enum TYPE{

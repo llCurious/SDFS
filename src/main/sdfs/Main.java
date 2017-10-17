@@ -1,6 +1,6 @@
-package sdfs;
+package main.sdfs;
 
-import sdfs.datanode.DataNode;
+import main.sdfs.datanode.DataNode;
 
 /**
  * Created by HaoqiWu on 10/14/17.

@@ -2,7 +2,7 @@
  * Copyright (c) Jipzingking 2016.
  */
 
-package sdfs;
+package main.sdfs;
 
 import java.io.Serializable;
 import java.net.InetAddress;

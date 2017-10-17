@@ -2,7 +2,7 @@
  * Copyright (c) Jipzingking 2016.
  */
 
-package sdfs.namenode;
+package main.sdfs.namenode;
 
 import java.util.ArrayList;
 import java.util.List;
