@@ -2,9 +2,9 @@
  * Copyright (c) Jipzingking 2016.
  */
 
-package main.sdfs.namenode;
+package main.java.sdfs.namenode;
 
-import main.sdfs.LocatedBlock;
+import main.java.sdfs.LocatedBlock;
 
 import java.io.Serializable;
 import java.util.ArrayList;

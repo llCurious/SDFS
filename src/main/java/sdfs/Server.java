@@ -1,7 +1,7 @@
-package main.sdfs;
+package main.java.sdfs;
 
-import main.sdfs.namenode.FileNode;
-import main.sdfs.namenode.Master;
+import main.java.sdfs.namenode.FileNode;
+import main.java.sdfs.namenode.Master;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package main.sdfs.datanode;
+package main.java.sdfs.datanode;
 
 import java.io.*;
 import java.nio.file.FileAlreadyExistsException;

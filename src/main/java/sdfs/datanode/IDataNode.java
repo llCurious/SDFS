@@ -2,7 +2,7 @@
  * Copyright (c) Jipzingking 2016.
  */
 
-package main.sdfs.datanode;
+package main.java.sdfs.datanode;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

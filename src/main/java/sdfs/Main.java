@@ -1,6 +1,6 @@
-package main.sdfs;
+package main.java.sdfs;
 
-import main.sdfs.datanode.DataNode;
+import main.java.sdfs.datanode.DataNode;
 
 /**
  * Created by HaoqiWu on 10/14/17.
