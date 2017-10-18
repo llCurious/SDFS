@@ -16,6 +16,7 @@ public class DirNode extends Entity {
     public DirNode(int id){
         this.id = id;
         contents = new ArrayList<>();
+//        System.out.println(this.name+"我的ID是："+this.id);
     }
 
     public List<Entity> getContents() {

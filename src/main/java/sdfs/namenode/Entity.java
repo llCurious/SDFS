@@ -1,7 +1,8 @@
 package main.java.sdfs.namenode;
 
 public class Entity {
-    enum TYPE{
+    //todo 去掉public
+    public enum TYPE{
         FILE,DIR
     }
 

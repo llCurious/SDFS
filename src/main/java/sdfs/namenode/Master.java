@@ -14,7 +14,8 @@ import java.util.List;
  * 传入文件Uri，并提供多个读写操作
  */
 public class Master implements INameNode {
-    private DirNode root = null;
+    //todo 改回private
+    public DirNode root = null;
     private int dirNum;
 
     public Master(){
@@ -22,17 +23,18 @@ public class Master implements INameNode {
         root = new DirNode(dirNum);
         root.setName("data");
         root.setType(Entity.TYPE.DIR);
-        FileNode fileNode = new FileNode();
-        fileNode.setName("test.txt");
-        fileNode.setType(Entity.TYPE.FILE);
-
-        DirNode dirNode = new DirNode(dirNum++);
-        dirNode.setName("test");
-        dirNode.setType(Entity.TYPE.DIR);
-
-        root.addEntity(fileNode);
-        root.addEntity(dirNode);
+//        FileNode fileNode = new FileNode();
+//        fileNode.setName("test.txt");
+//        fileNode.setType(Entity.TYPE.FILE);
+//
+//        DirNode dirNode = new DirNode(++dirNum);
+//        dirNode.setName("test");
+//        dirNode.setType(Entity.TYPE.DIR);
+//
+//        root.addEntity(fileNode);
+//        root.addEntity(dirNode);
     }
+
 
     @Override
     public FileNode open(String fileUri) throws IOException, URISyntaxException {
@@ -46,7 +48,7 @@ public class Master implements INameNode {
 
         FileNode fileNode = (FileNode) findFile(root,names);
         if (fileNode != null){
-            System.out.println(fileNode.getName());
+            System.out.println("Open File: "+fileNode.getName());
         }
 
         return fileNode;
@@ -68,11 +70,12 @@ public class Master implements INameNode {
         fileNode.setName(fileName);
 
         DirNode dirNode = (DirNode) findDir(root,names);
+        if (dirNode == null) throw new IOException("Uri Error!!!!");
 //        System.out.println("Dir:"+dirNode.getName());
         dirNode.addEntity(fileNode);
 //        System.out.println("Name: "+dirNode.getContents().get(0).getName());
 
-        return null;
+        return fileNode;
     }
 
     @Override
@@ -89,11 +92,12 @@ public class Master implements INameNode {
         String dirName = names[names.length-1];
 
         //创建新的DirNode
-        DirNode dirNode = new DirNode(dirNum++);
+        DirNode dirNode = new DirNode(++dirNum);
         dirNode.setType(Entity.TYPE.DIR);
         dirNode.setName(dirName);
 
         DirNode parent = (DirNode)findDir(root, names);
+        if (parent == null) throw new IOException("Uri Error!!!");
         for (int i = 0; i < parent.getContents().size(); i++) {
             if (parent.getContents().get(i).getName().equals(dirName) &&
                     parent.getContents().get(i).getType()== Entity.TYPE.DIR){
@@ -101,6 +105,7 @@ public class Master implements INameNode {
             }
         }
         parent.addEntity(dirNode);
+        System.out.println("Create Dir: "+ dirNode.getName());
 //        System.out.println(parent.getContents().get(2).getName());
     }
 
@@ -171,7 +176,8 @@ public class Master implements INameNode {
                         isFind = true;
                         break;
                     }else{
-                        return contents.get(j);
+                        if (i == fileName.length-1) return contents.get(j);
+                        else throw new IOException("Uri Error, file cannot be a directory!");
                     }
                 }
             }
