@@ -13,8 +13,8 @@ public class SDFS_Save {
     public SDFS_Save(Entity entity){
         this.entity = entity;
     }
-    public int save() throws IOException{
-        XMLEncoder xmlEncoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("src/test.xml")));
+    public int save(String name) throws IOException{
+        XMLEncoder xmlEncoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("src/record/"+name+".xml")));
         xmlEncoder.writeObject(entity);
         xmlEncoder.close();
         return 1;

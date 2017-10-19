@@ -1,11 +1,10 @@
 package main.java.sdfs;
 
 import main.java.sdfs.datanode.DataNode;
-import main.java.sdfs.persistent.SDFS_Load;
-
 
 /**
  * Created by HaoqiWu on 10/14/17.
+ * 测试SDFS的main方法，程序入口
  */
 public class Main {
     public static void main(String[] args) {
@@ -34,9 +33,10 @@ public class Main {
 //            server.open("/data/test/asdasd.txt");
 //            server.mkdir("/data/wow");
 //            server.create("/data/wow/5.txt");
+            server.open("/data/test.txt");
             System.out.println("\n_________________________TEST,输出所有的文件");
-            SDFS_Load sdfs_load = new SDFS_Load("src/test.xml");
-            server.test(sdfs_load.load());
+//            SDFS_Load sdfs_load = new SDFS_Load("src/test.xml");
+            server.testFile();
 //            server.create("/add.tet");
 
             server.save();

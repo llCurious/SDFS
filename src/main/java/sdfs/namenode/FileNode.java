@@ -7,6 +7,7 @@ package main.java.sdfs.namenode;
 import main.java.sdfs.LocatedBlock;
 
 import java.io.Serializable;
+import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,11 +15,18 @@ public class FileNode extends Entity implements Serializable {
     private static final long serialVersionUID = -5007570814999866661L;
     private final List<BlockInfo> blockInfos = new ArrayList<>();
 
+    public FileNode(){
 
+    }
     //todo your code here
     public int blockNum(){
-        blockInfos.add(new BlockInfo());
+//        BlockInfo blockInfo = new BlockInfo();
+//        blockInfo.addBlock(new LocatedBlock(InetAddress.getByName("192.168.0.1"),11));
+//        blockInfos.add(blockInfo);
         return blockInfos.size();
+    }
+    public List<BlockInfo> getBlockInfos(){
+        return this.blockInfos;
     }
     public List<LocatedBlock> getBlockInfo(int index){
         return blockInfos.get(index).getLocatedBlocks();
@@ -34,5 +42,8 @@ class BlockInfo implements Serializable {
     //todo your code here
     public List<LocatedBlock> getLocatedBlocks() {
         return locatedBlocks;
+    }
+    public void addBlock(LocatedBlock block){
+        this.locatedBlocks.add(block);
     }
 }

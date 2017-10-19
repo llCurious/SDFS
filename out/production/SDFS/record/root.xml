@@ -5,23 +5,13 @@
    <void method="add">
     <object class="main.java.sdfs.namenode.FileNode">
      <void property="name">
-      <string>add.tet</string>
+      <string>sdasd.sss</string>
      </void>
      <void property="type">
       <object class="java.lang.Enum" id="Entity$TYPE0" method="valueOf">
        <class>main.java.sdfs.namenode.Entity$TYPE</class>
        <string>FILE</string>
       </object>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="main.java.sdfs.namenode.FileNode">
-     <void property="name">
-      <string>sdasd.sss</string>
-     </void>
-     <void property="type">
-      <object idref="Entity$TYPE0"/>
      </void>
     </object>
    </void>
