@@ -1,6 +1,8 @@
 package main.java.sdfs;
 
 import main.java.sdfs.datanode.DataNode;
+import main.java.sdfs.persistent.SDFS_Load;
+
 
 /**
  * Created by HaoqiWu on 10/14/17.
@@ -18,20 +20,26 @@ public class Main {
 
             System.out.println("\n_________________________测试文件和目录的创建");
             Server server = new Server();
-            server.create("/data/test.txt");
-
-            server.mkdir("/data/test");
-            server.open("/data/test.txt");
-            server.create("/data/test/asdasd.txt");
-            server.create("/data/test/2.txt");
-            server.create("/data/test/3.txt");
-            //测试错误的Uri
-//            server.create("/data/testww/4.txt");
-            server.open("/data/test/asdasd.txt");
-            server.mkdir("/data/wow");
-            server.create("/data/wow/5.txt");
+//            server.create("/sdasd.sss");
+//            server.mkdir("/data");
+//            server.create("/data/test.txt");
+//
+//            server.mkdir("/data/test");
+//            server.open("/data/test.txt");
+//            server.create("/data/test/asdasd.txt");
+//            server.create("/data/test/2.txt");
+//            server.create("/data/test/3.txt");
+//            //测试错误的Uri
+////            server.create("/data/testww/4.txt");
+//            server.open("/data/test/asdasd.txt");
+//            server.mkdir("/data/wow");
+//            server.create("/data/wow/5.txt");
             System.out.println("\n_________________________TEST,输出所有的文件");
-            server.testFile();
+            SDFS_Load sdfs_load = new SDFS_Load("src/test.xml");
+            server.test(sdfs_load.load());
+//            server.create("/add.tet");
+
+            server.save();
 //            server.open("/data/wow");
         }catch (Exception e){
             e.printStackTrace();

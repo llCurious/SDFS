@@ -1,10 +1,12 @@
 package main.java.sdfs.namenode;
 
 import main.java.sdfs.LocatedBlock;
+import main.java.sdfs.persistent.SDFS_Load;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.FileAlreadyExistsException;
+import java.rmi.server.ExportException;
 import java.util.List;
 
 /**
@@ -21,8 +23,16 @@ public class Master implements INameNode {
     public Master(){
         dirNum = 0;
         root = new DirNode(dirNum);
-        root.setName("data");
+        root.setId(0);
+        root.setName("");
         root.setType(Entity.TYPE.DIR);
+        SDFS_Load sdfs_load = new SDFS_Load("src/test.xml");
+        try{
+            root = (DirNode) sdfs_load.load();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
 //        FileNode fileNode = new FileNode();
 //        fileNode.setName("test.txt");
 //        fileNode.setType(Entity.TYPE.FILE);
@@ -127,12 +137,12 @@ public class Master implements INameNode {
         List<Entity> contents = root.getContents();
         String name;
         boolean isFind = false;
-        if (!fileName[1].equals(root.getName())){
-            throw new IOException("Root Error!");
-        }else if (fileName.length == 3){
+        if (!fileName[0].equals(root.getName())){
+            throw new IOException(fileName[0]+"Root Error!");
+        }else if (fileName.length == 2){
             return root;
         }
-        for (int i = 2; i < fileName.length; i++) {
+        for (int i = 1; i < fileName.length; i++) {
             name = fileName[i];
 //            System.out.println(name);
             for (int j = 0; j < contents.size(); j++) {
@@ -164,10 +174,10 @@ public class Master implements INameNode {
         List<Entity> contents = root.getContents();
         String name;
         boolean isFind = false;
-        if (!fileName[1].equals(root.getName())){
-            throw new IOException("Root Error!");
+        if (!fileName[0].equals(root.getName())){
+            throw new IOException(fileName[0]+"Root Error!");
         }
-        for (int i = 2; i < fileName.length; i++) {
+        for (int i = 1; i < fileName.length; i++) {
             name = fileName[i];
             for (int j = 0; j < contents.size(); j++) {
                 if (contents.get(j).getName().equals(name)){

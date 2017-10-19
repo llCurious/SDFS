@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="9" class="java.beans.XMLDecoder">
+ <object class="main.java.sdfs.namenode.DirNode" id="DirNode0">
+  <void property="contents">
+   <void method="add">
+    <object class="main.java.sdfs.namenode.FileNode">
+     <void property="name">
+      <string>add.tet</string>
+     </void>
+     <void property="type">
+      <object class="java.lang.Enum" method="valueOf">
+       <class>main.java.sdfs.namenode.Entity$TYPE</class>
+       <string>FILE</string>
+      </object>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="name">
+   <string></string>
+  </void>
+  <void property="type">
+   <object class="java.lang.Enum" method="valueOf">
+    <class>main.java.sdfs.namenode.Entity$TYPE</class>
+    <string>DIR</string>
+   </object>
+  </void>
+ </object>
+</java>

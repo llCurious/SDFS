@@ -13,6 +13,10 @@ public class DirNode extends Entity {
     //todo your code here
     private List<Entity> contents;
 
+    public DirNode(){
+        this.id = 0;
+        contents = new ArrayList<>();
+    }
     public DirNode(int id){
         this.id = id;
         contents = new ArrayList<>();

@@ -4,6 +4,7 @@ import main.java.sdfs.namenode.DirNode;
 import main.java.sdfs.namenode.Entity;
 import main.java.sdfs.namenode.FileNode;
 import main.java.sdfs.namenode.Master;
+import main.java.sdfs.persistent.SDFS_Save;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,7 +21,7 @@ public class Server implements ISimpleDistributedFileSystem{
     public void testFile(){
         test(master.root);
     }
-    private void test(Entity root){
+    public void test(Entity root){
         Entity entity = root;
         if (entity.getType() == Entity.TYPE.DIR){
             for (int i = 0; i < ((DirNode)root).getContents().size(); i++) {
@@ -86,5 +87,9 @@ public class Server implements ISimpleDistributedFileSystem{
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+    public void save() throws IOException{
+        SDFS_Save sdfs_save = new SDFS_Save(master.root);
+        sdfs_save.save();
     }
 }
