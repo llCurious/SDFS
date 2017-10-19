@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_101" class="java.beans.XMLDecoder">
+ <object class="main.java.sdfs.namenode.FileNode">
+  <void property="name">
+   <string>asdasd.txt</string>
+  </void>
+  <void property="type">
+   <object class="java.lang.Enum" method="valueOf">
+    <class>main.java.sdfs.namenode.Entity$TYPE</class>
+    <string>FILE</string>
+   </object>
+  </void>
+ </object>
+</java>

@@ -22,7 +22,7 @@ public class SDFSInputStream implements Closeable {
         //todo your code here
 
         //根据返回的FileNode，找到对应的block的位置
-        int blockNum = fileNode.blockNum();
+//        int blockNum = fileNode.blockNum();
         List<LocatedBlock> blocks = fileNode.getBlockInfo(0);
 
         //调用DataNode，传入blockNumber读取信息

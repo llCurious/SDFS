@@ -47,7 +47,7 @@ public class Server implements ISimpleDistributedFileSystem{
             FileNode fileNode = master.open(fileUri);
             if (fileNode == null) throw new IOException("File not exist!");
             SDFSInputStream sdfsInputStream = new SDFSInputStream(fileNode);
-
+//            System.out.println(fileNode.blockNum());
             return sdfsInputStream;
         }catch (URISyntaxException e){
             e.printStackTrace();
@@ -64,6 +64,7 @@ public class Server implements ISimpleDistributedFileSystem{
         try{
             FileNode fileNode = master.open(fileUri);
 //            System.out.println("Create: "+fileNode.getName());
+//            fileNode.blockNum();
             //如果文件已经存在，抛出异常
             if (fileNode != null){
                 throw new FileAlreadyExistsException("File already exists!");
@@ -90,6 +91,19 @@ public class Server implements ISimpleDistributedFileSystem{
     }
     public void save() throws IOException{
         SDFS_Save sdfs_save = new SDFS_Save(master.root);
-        sdfs_save.save();
+        sdfs_save.save("root");
+//        System.out.println(master.root.getId());
+        saveFile(master.root);
+    }
+    private void saveFile(DirNode root) throws IOException{
+        for (int i = 0; i < root.getContents().size(); i++) {
+            Entity entity = root.getContents().get(i);
+            if (entity.getType() == Entity.TYPE.DIR){
+                saveFile((DirNode) entity);
+            }else{
+                SDFS_Save sdfs_save = new SDFS_Save((FileNode)entity);
+                sdfs_save.save(entity.getName());
+            }
+        }
     }
 }

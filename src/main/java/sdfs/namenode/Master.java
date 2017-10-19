@@ -26,7 +26,7 @@ public class Master implements INameNode {
         root.setId(0);
         root.setName("");
         root.setType(Entity.TYPE.DIR);
-        SDFS_Load sdfs_load = new SDFS_Load("src/test.xml");
+        SDFS_Load sdfs_load = new SDFS_Load("src/record/root.xml");
         try{
             root = (DirNode) sdfs_load.load();
         }catch (Exception e){
@@ -58,7 +58,7 @@ public class Master implements INameNode {
 
         FileNode fileNode = (FileNode) findFile(root,names);
         if (fileNode != null){
-            System.out.println("Open File: "+fileNode.getName());
+            System.out.println("Open File: "+fileNode.getName()+fileNode.blockNum());
         }
 
         return fileNode;
@@ -78,10 +78,17 @@ public class Master implements INameNode {
         FileNode fileNode = new FileNode();
         fileNode.setType(Entity.TYPE.FILE);
         fileNode.setName(fileName);
+        try{
+            fileNode.blockNum();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         DirNode dirNode = (DirNode) findDir(root,names);
         if (dirNode == null) throw new IOException("Uri Error!!!!");
 //        System.out.println("Dir:"+dirNode.getName());
+//        System.out.println(fileNode.blockNum());
         dirNode.addEntity(fileNode);
 //        System.out.println("Name: "+dirNode.getContents().get(0).getName());
 
