@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="9" class="java.beans.XMLDecoder">
+<java version="1.8.0_101" class="java.beans.XMLDecoder">
  <object class="main.java.sdfs.namenode.DirNode" id="DirNode0">
   <void property="contents">
    <void method="add">
@@ -8,10 +8,118 @@
       <string>add.tet</string>
      </void>
      <void property="type">
-      <object class="java.lang.Enum" method="valueOf">
+      <object class="java.lang.Enum" id="Entity$TYPE0" method="valueOf">
        <class>main.java.sdfs.namenode.Entity$TYPE</class>
        <string>FILE</string>
       </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="main.java.sdfs.namenode.FileNode">
+     <void property="name">
+      <string>sdasd.sss</string>
+     </void>
+     <void property="type">
+      <object idref="Entity$TYPE0"/>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="main.java.sdfs.namenode.DirNode" id="DirNode1">
+     <void property="contents">
+      <void method="add">
+       <object class="main.java.sdfs.namenode.FileNode">
+        <void property="name">
+         <string>test.txt</string>
+        </void>
+        <void property="type">
+         <object idref="Entity$TYPE0"/>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="main.java.sdfs.namenode.DirNode" id="DirNode2">
+        <void property="contents">
+         <void method="add">
+          <object class="main.java.sdfs.namenode.FileNode">
+           <void property="name">
+            <string>asdasd.txt</string>
+           </void>
+           <void property="type">
+            <object idref="Entity$TYPE0"/>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="main.java.sdfs.namenode.FileNode">
+           <void property="name">
+            <string>2.txt</string>
+           </void>
+           <void property="type">
+            <object idref="Entity$TYPE0"/>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="main.java.sdfs.namenode.FileNode">
+           <void property="name">
+            <string>3.txt</string>
+           </void>
+           <void property="type">
+            <object idref="Entity$TYPE0"/>
+           </void>
+          </object>
+         </void>
+        </void>
+        <void property="id">
+         <int>2</int>
+        </void>
+        <void property="name">
+         <string>test</string>
+        </void>
+        <void property="type">
+         <object class="java.lang.Enum" id="Entity$TYPE1" method="valueOf">
+          <class>main.java.sdfs.namenode.Entity$TYPE</class>
+          <string>DIR</string>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="main.java.sdfs.namenode.DirNode" id="DirNode3">
+        <void property="contents">
+         <void method="add">
+          <object class="main.java.sdfs.namenode.FileNode">
+           <void property="name">
+            <string>5.txt</string>
+           </void>
+           <void property="type">
+            <object idref="Entity$TYPE0"/>
+           </void>
+          </object>
+         </void>
+        </void>
+        <void property="id">
+         <int>3</int>
+        </void>
+        <void property="name">
+         <string>wow</string>
+        </void>
+        <void property="type">
+         <object idref="Entity$TYPE1"/>
+        </void>
+       </object>
+      </void>
+     </void>
+     <void property="id">
+      <int>1</int>
+     </void>
+     <void property="name">
+      <string>data</string>
+     </void>
+     <void property="type">
+      <object idref="Entity$TYPE1"/>
      </void>
     </object>
    </void>
@@ -20,10 +128,7 @@
    <string></string>
   </void>
   <void property="type">
-   <object class="java.lang.Enum" method="valueOf">
-    <class>main.java.sdfs.namenode.Entity$TYPE</class>
-    <string>DIR</string>
-   </object>
+   <object idref="Entity$TYPE1"/>
   </void>
  </object>
 </java>
