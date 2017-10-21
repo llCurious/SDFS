@@ -18,29 +18,37 @@ public class Main {
 //            }
 
             System.out.println("\n_________________________测试文件和目录的创建");
-            Server server = new Server();
-//            server.create("/sdasd.sss");
-//            server.mkdir("/data");
-//            server.create("/data/test.txt");
+            Client client = new Client();
+//            client.create("/sdasd.sss");
+//            client.mkdir("/data");
+//            client.create("/data/test.txt");
 //
-//            server.mkdir("/data/test");
-//            server.open("/data/test.txt");
-//            server.create("/data/test/asdasd.txt");
-//            server.create("/data/test/2.txt");
-//            server.create("/data/test/3.txt");
+//            client.mkdir("/data/test");
+//            client.open("/data/test.txt");
+//            client.create("/data/test/asdasd.txt");
+//            client.create("/data/test/2.txt");
+//            client.create("/data/test/3.txt");
 //            //测试错误的Uri
-////            server.create("/data/testww/4.txt");
-//            server.open("/data/test/asdasd.txt");
-//            server.mkdir("/data/wow");
-//            server.create("/data/wow/5.txt");
-            server.open("/data/test.txt");
+////            client.create("/data/testww/4.txt");
+//            client.open("/data/test/asdasd.txt");
+//            client.mkdir("/data/wow");
+//            client.create("/data/wow/5.txt");
+            SDFSInputStream inputStream= client.open("/data/test.txt");
+            inputStream.read(b);
+            System.out.println("_____内容");
+            for (int i = 0; i < b.length; i++) {
+                System.out.println(b[i]);
+            }
+
+//            client.open("/data/test.txt");
+
             System.out.println("\n_________________________TEST,输出所有的文件");
 //            SDFS_Load sdfs_load = new SDFS_Load("src/test.xml");
-            server.testFile();
-//            server.create("/add.tet");
+            client.testFile();
+//            client.create("/add.tet");
 
-            server.save();
-//            server.open("/data/wow");
+            client.save();
+//            client.open("/data/wow");
         }catch (Exception e){
             e.printStackTrace();
         }

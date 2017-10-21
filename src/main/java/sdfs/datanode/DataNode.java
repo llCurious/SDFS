@@ -8,6 +8,7 @@ import java.nio.file.FileAlreadyExistsException;
  * 读取和写入文件的接口
  */
 public class DataNode implements IDataNode{
+    //blockSize 为一个DataNode对应的Block的大小
     @Override
     public int read(int blockNumber, int offset, int size, byte[] b) throws IndexOutOfBoundsException, FileNotFoundException, IOException {
         //判断是否Index异常

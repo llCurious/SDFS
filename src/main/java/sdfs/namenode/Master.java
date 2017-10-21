@@ -4,6 +4,7 @@ import main.java.sdfs.LocatedBlock;
 import main.java.sdfs.persistent.SDFS_Load;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.URISyntaxException;
 import java.nio.file.FileAlreadyExistsException;
 import java.rmi.server.ExportException;
@@ -59,8 +60,12 @@ public class Master implements INameNode {
         FileNode fileNode = (FileNode) findFile(root,names);
         if (fileNode != null){
             System.out.println("Open File: "+fileNode.getName()+fileNode.blockNum());
+            try{
+                fileNode.add(InetAddress.getByName("192.168.0.1"),1);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
-
         return fileNode;
     }
 
@@ -96,6 +101,7 @@ public class Master implements INameNode {
     }
 
     @Override
+    //todo close???????
     public void close(String fileUri) throws IOException, URISyntaxException {
         root = null;
     }
@@ -108,11 +114,7 @@ public class Master implements INameNode {
         String parentName = names[names.length-2];
         String dirName = names[names.length-1];
 
-        //创建新的DirNode
-        DirNode dirNode = new DirNode(++dirNum);
-        dirNode.setType(Entity.TYPE.DIR);
-        dirNode.setName(dirName);
-
+        //找到父节点
         DirNode parent = (DirNode)findDir(root, names);
         if (parent == null) throw new IOException("Uri Error!!!");
         for (int i = 0; i < parent.getContents().size(); i++) {
@@ -121,6 +123,11 @@ public class Master implements INameNode {
                 throw new FileAlreadyExistsException("Directory already exists!");
             }
         }
+        //创建新的DirNode
+        DirNode dirNode = new DirNode(++dirNum);
+        dirNode.setType(Entity.TYPE.DIR);
+        dirNode.setName(dirName);
+
         parent.addEntity(dirNode);
         System.out.println("Create Dir: "+ dirNode.getName());
 //        System.out.println(parent.getContents().get(2).getName());

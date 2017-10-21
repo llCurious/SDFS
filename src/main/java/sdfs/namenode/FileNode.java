@@ -20,9 +20,6 @@ public class FileNode extends Entity implements Serializable {
     }
     //todo your code here
     public int blockNum(){
-//        BlockInfo blockInfo = new BlockInfo();
-//        blockInfo.addBlock(new LocatedBlock(InetAddress.getByName("192.168.0.1"),11));
-//        blockInfos.add(blockInfo);
         return blockInfos.size();
     }
     public List<BlockInfo> getBlockInfos(){
@@ -30,6 +27,11 @@ public class FileNode extends Entity implements Serializable {
     }
     public List<LocatedBlock> getBlockInfo(int index){
         return blockInfos.get(index).getLocatedBlocks();
+    }
+    public void add(InetAddress inetAddress, int blockNum) throws Exception{
+        BlockInfo blockInfo = new BlockInfo();
+        blockInfo.addBlock(new LocatedBlock(inetAddress,blockNum));
+        blockInfos.add(blockInfo);
     }
 
 }

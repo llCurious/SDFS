@@ -14,7 +14,7 @@ import java.nio.file.FileAlreadyExistsException;
 /**
  * Created by HaoqiWu on 10/13/17.
  */
-public class Server implements ISimpleDistributedFileSystem{
+public class Client implements ISimpleDistributedFileSystem{
     Master master = new Master();
     byte[] tmp = new byte[20];
 
@@ -42,17 +42,17 @@ public class Server implements ISimpleDistributedFileSystem{
         //todo 解析fileUri, sdfs://[ip]:[port]/foo/bar.data
 
         //传到Master找到对应文件，返回的是FileNode
-
+        SDFSInputStream sdfsInputStream = null;
         try{
             FileNode fileNode = master.open(fileUri);
             if (fileNode == null) throw new IOException("File not exist!");
-            SDFSInputStream sdfsInputStream = new SDFSInputStream(fileNode);
+            sdfsInputStream = new SDFSInputStream(fileNode);
 //            System.out.println(fileNode.blockNum());
             return sdfsInputStream;
         }catch (URISyntaxException e){
             e.printStackTrace();
         }catch (FileNotFoundException fe){
-            fe.printStackTrace();
+            System.out.println("File Not Found!");
         }
         return null;
 
