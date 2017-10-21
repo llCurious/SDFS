@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="06656a8d-2872-4f3a-a0fc-673434b0bf9c" name="Default" comment="" />
+=======
     <list default="true" id="06656a8d-2872-4f3a-a0fc-673434b0bf9c" name="Default" comment="">
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/sdfs/Server.java" afterPath="$PROJECT_DIR$/src/main/java/sdfs/Client.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SDFS/main/java/sdfs/Main.class" afterPath="$PROJECT_DIR$/out/production/SDFS/main/java/sdfs/Main.class" />
@@ -19,6 +22,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sdfs/namenode/FileNode.java" afterPath="$PROJECT_DIR$/src/main/java/sdfs/namenode/FileNode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sdfs/namenode/Master.java" afterPath="$PROJECT_DIR$/src/main/java/sdfs/namenode/Master.java" />
     </list>
+>>>>>>> 9646a2d5fb73ba718cb16e24c07ff3fcaafab32b
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -160,10 +164,17 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
+    <option name="x" value="423" />
+    <option name="y" value="92" />
+    <option name="width" value="1020" />
+    <option name="height" value="1047" />
+=======
     <option name="x" value="4" />
     <option name="y" value="23" />
     <option name="width" value="1276" />
     <option name="height" value="777" />
+>>>>>>> 9646a2d5fb73ba718cb16e24c07ff3fcaafab32b
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -859,18 +870,40 @@
       <option name="presentableId" value="Default" />
       <updated>1508245701242</updated>
       <workItem from="1508245704788" duration="1102000" />
+<<<<<<< HEAD
+      <workItem from="1508312362135" duration="11608000" />
+=======
       <workItem from="1508312362135" duration="11209000" />
       <workItem from="1508408328210" duration="5805000" />
+<<<<<<< HEAD
       <workItem from="1508416184049" duration="5164000" />
       <workItem from="1508490577895" duration="11969000" />
+=======
+>>>>>>> 9646a2d5fb73ba718cb16e24c07ff3fcaafab32b
+>>>>>>> origin/master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="35249000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1276" height="777" extended-state="6" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="12710000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="423" y="92" width="1020" height="1047" extended-state="0" />
+=======
+    <option name="totallyTimeSpent" value="18116000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="4" y="23" width="1276" height="777" extended-state="6" />
+>>>>>>> 9646a2d5fb73ba718cb16e24c07ff3fcaafab32b
+    <editor active="true" />
+>>>>>>> origin/master
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -881,7 +914,15 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15960452" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+=======
+<<<<<<< HEAD
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5391211" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.105932206" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> 9646a2d5fb73ba718cb16e24c07ff3fcaafab32b
+>>>>>>> origin/master
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
